@@ -1,0 +1,49 @@
+{
+  "name": "phyre",
+  "version": "0.8.0-beta.1",
+  "description": "A React framework that grows with your projects and supports multi-package apps with SSR",
+  "type": "module",
+  "bin": {
+    "phyre": "bin/phyre.js"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "react",
+    "framework",
+    "ssr",
+    "fullstack",
+    "monorepo"
+  ],
+  "author": {
+    "name": "Luca Oliva",
+    "email": "luca.oliva.dev@gmail.com",
+    "url": "https://github.com/justkelu"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justkelu/phyre.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@prettier/sync": "^0.6.1",
+    "autoprefixer": "^10.4.16",
+    "dotenv": "^17.2.3",
+    "esbuild": "^0.27.0",
+    "express": "^5.1.0",
+    "postcss": "^8.4.32",
+    "prettier": "^3.7.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "^7.9.6",
+    "tailwindcss": "^3.4.0",
+    "ws": "^8.18.3"
+  }
+}
