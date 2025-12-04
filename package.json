@@ -1,6 +1,6 @@
 {
   "name": "phyre",
-  "version": "0.8.0-beta.1",
+  "version": "0.8.0-beta.2",
   "description": "A React framework that grows with your projects and supports multi-package apps with SSR",
   "type": "module",
   "bin": {

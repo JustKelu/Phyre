@@ -17,21 +17,11 @@ A lightweight React framework with SSR, file-based routing, and monorepo support
 
 ## 🚀 Quick Start
 ```bash
-# Install Phyre globally
-npm install -g phyre@beta
+# Create new app with CLI
+npx create-phyre@latest my-app
 
-# Navigate to your project directory
+# Navigate to project
 cd my-app
-
-# Initialize package.json and add phyre as dependency
-npm init -y
-npm install phyre@beta
-
-# Add scripts to package.json:
-# "scripts": {
-#   "dev": "phyre dev",
-#   "build": "phyre build"
-# }
 
 # Start development
 npm run dev
@@ -42,16 +32,18 @@ npm run build
 
 ## 📚 Documentation
 
-Coming soon.
+Full documentation available at: **[phyre.dev](https://justkelu.github.io/phrye-documentation/)**
+
+Quick links:
+- [Getting Started](https://phyre.dev/docs/getting-started)
+- [Routing](https://phyre.dev/docs/routing)
+- [API Routes](https://phyre.dev/docs/api-routes)
+- [Configuration](https://phyre.dev/docs/configuration)
 
 ## 🛠️ Requirements
 
 - Node.js >= 18.0.0
 - npm or yarn
-
-## 🐛 Known Issues
-
-- **Windows**: Avoid creating projects in `C:\Users\[User]\Documenti\` or any protected folder.
 
 ## 📦 Project Structure
 ```
@@ -73,6 +65,19 @@ my-app/
 └── package.json
 ```
 
+## 🐛 Known Issues
+
+- **Windows (Italian)**: Avoid creating projects in `C:\Users\[User]\Documents\`. Use `Desktop` or `C:\Projects\` instead.
+
+## 📝 Changelog
+
+### v0.8.0-beta.2
+- ✅ Fixed file names with hyphens (e.g., `user-home.jsx`) now work correctly
+- ✅ Complete documentation available
+
+### v0.8.0-beta.1
+- 🎉 Initial beta release
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please open an issue or PR.
@@ -83,5 +88,8 @@ MIT © Luca Oliva
 
 ## 🔗 Links
 
+- [Documentation](https://justkelu.github.io/phrye-documentation/)
+- [Linkedin](https://www.linkedin.com/in/luca-oliva-dev/?locale=en-US)
 - [GitHub](https://github.com/justkelu/phyre)
 - [Issues](https://github.com/justkelu/phyre/issues)
+- [NPM](https://www.npmjs.com/package/phyre)
