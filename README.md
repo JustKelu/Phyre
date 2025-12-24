@@ -1,95 +1,33 @@
-# 🔥 Phyre
+<div align="center" background="black">
+  <h1><img style="height:4.5em; margin: -0.2em 0 0 0;" src="https://i.imgur.com/y3wU4OY.png"></h1>
 
-A lightweight React framework with SSR, file-based routing, and monorepo support.
+  <a href="https://www.npmjs.com/package/phyre"><img alt="NPM version" src="https://img.shields.io/npm/v/phyre.svg?style=for-the-badge&labelColor=6E00C7&color=8b0cf6"></a>
+  <a href="https://github.com/JustKelu/Phyre/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/npm/l/phyre.svg?style=for-the-badge&labelColor=6E00C7&color=8b0cf6"></a>
 
-> ⚠️ **Beta Release** - This is an early beta. APIs may change. Use in production at your own risk.
+  <img src="https://img.shields.io/badge/Node.js-8b0cf6?style=flat-square&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-8b0cf6?style=flat-square&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Rust-8b0cf6?style=flat-square&logo=rust&logoColor=white"/>
+</div>
 
-## ✨ Features
+## Why Phyre?
 
-- 🚀 **Server-Side Rendering** with React Router 7
-- 📁 **File-based routing** with dynamic routes `[id]` and layouts
-- 🔥 **Hot Module Replacement** via WebSocket
-- 🎨 **Tailwind CSS** built-in with PostCSS
-- 🌐 **API routes** with file-based system
-- 📦 **Monorepo support** out of the box
-- 🔒 **Environment variables** validation
-- ⚡ **Fast builds** with esbuild
+Phyre is built on a simple philosophy: **your framework should grow with you**, not against you.
 
-## 🚀 Quick Start
-```bash
-# Create new app with CLI
-npx create-phyre@latest my-app
+Whether you're prototyping your first idea or scaling to thousands of users, Phyre adapts to your needs without forcing you to rewrite or reconfigure. Start simple, scale when ready, all within the same codebase.
 
-# Navigate to project
-cd my-app
+### Built for Growth
 
-# Start development
-npm run dev
+Most frameworks make you choose: either stay small and simple, or embrace complexity from day one. Phyre gives you both. Begin with a single app, and when your project demands it, expand into a **zero-config monorepo** with multiple applications, isolated routing, and automatic API mounting—no migration, no breaking changes.
 
-# Build for production
-npm run build
-```
 
-## 📚 Documentation
+## Getting started
 
-Full documentation available at: **[phyre.dev](https://justkelu.github.io/phrye-documentation/)**
+Run `npx create-phyre@latest my-app` in your terminal and choose a template with your preferred options.
 
-Quick links:
-- [Getting Started](https://phyre.dev/docs/getting-started)
-- [Routing](https://phyre.dev/docs/routing)
-- [API Routes](https://phyre.dev/docs/api-routes)
-- [Configuration](https://phyre.dev/docs/configuration)
+## Documentation
 
-## 🛠️ Requirements
+Read the [Phyre documentation](https://justkelu.github.io/phrye-documentation) to learn how to use Phyre.
 
-- Node.js >= 18.0.0
-- npm or yarn
+## Contributing
 
-## 📦 Project Structure
-```
-my-app/
-├── app/
-│   ├── index.jsx       # Client entry
-│   └── styles.css      # Global styles
-├── src/
-│   ├── client/
-│   │   └── routes/     # File-based routes
-│   │       ├── index.jsx
-│   │       ├── about.jsx
-│   │       └── [id].jsx
-│   └── server/
-│       └── api/        # API routes
-│           └── hello.js
-├── index.html
-├── phyre.config.js
-└── package.json
-```
-
-## 🐛 Known Issues
-
-- **Windows (Italian)**: Avoid creating projects in `C:\Users\[User]\Documents\`. Use `Desktop` or `C:\Projects\` instead.
-
-## 📝 Changelog
-
-### v0.8.0-beta.2
-- ✅ Fixed file names with hyphens (e.g., `user-home.jsx`) now work correctly
-- ✅ Complete documentation available
-
-### v0.8.0-beta.1
-- 🎉 Initial beta release
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open an issue or PR.
-
-## 📄 License
-
-MIT © Luca Oliva
-
-## 🔗 Links
-
-- [Documentation](https://justkelu.github.io/phrye-documentation/)
-- [Linkedin](https://www.linkedin.com/in/luca-oliva-dev/?locale=en-US)
-- [GitHub](https://github.com/justkelu/phyre)
-- [Issues](https://github.com/justkelu/phyre/issues)
-- [NPM](https://www.npmjs.com/package/phyre)
+Phyre is an open-source project that thrives on community feedback and contributions. Whether you're reporting a bug, suggesting a feature, or submitting a pull request, your input helps make Phyre better for everyone.
