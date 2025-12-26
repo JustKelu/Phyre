@@ -1,6 +1,6 @@
 mod read_files;
 mod build_router;
-mod utils;
+pub mod utils;
 
 use std::env;
 use napi_derive::napi;

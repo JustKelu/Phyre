@@ -6,7 +6,7 @@ name = "phyre_core"
 version = "0.1.0"
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 napi = "3.0.0"

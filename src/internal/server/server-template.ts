@@ -2,13 +2,13 @@ import { config } from 'dotenv';
 config();
 import express, {type Request, Response, NextFunction } from 'express';
 import fs from 'fs/promises';
-import { loadRoutes } from './api-router.js'
-import { globalsMiddleware } from './globals-middleware.js';
-import { generateMetaTagsHTML } from './generateMetaTagsHTML.js';
+import { loadRoutes } from './api/loadRoutes.js'
+import { globalsMiddleware } from './utils/globals-middleware.js';
+import { generateMetaTagsHTML } from './utils/generateMetaTagsHTML.js';
 
 import { join, resolve } from 'node:path';
 import { createRequire } from 'node:module';
-import { PhyreConfig } from '../../types/routes.js';
+import { PhyreConfig } from '../../types/config.js';
 
 const userDir = process.cwd();
 

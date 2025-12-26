@@ -43,7 +43,7 @@ export const envValidationPlugin = {
 
             if (missing.length > 0) {
                 const warnings = missing.map(v => 
-                    `âš ï¸  Variable "process.env.${v}" is used but not defined in .env`
+                    `Variable "process.env.${v}" is used but not defined in .env`
                 );
 
                 console.warn('\n' + warnings.join('\n'));
@@ -52,7 +52,7 @@ export const envValidationPlugin = {
 
             if (notPublic.length > 0) {
                 const warnings = notPublic.map(v => 
-                    `âš ï¸   Using process.env.${v} in client-side code will expose the variable.`
+                    `Using process.env.${v} in client-side code will expose the variable.`
                         
                 );
 

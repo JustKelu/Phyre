@@ -8,6 +8,7 @@ static BRACKETS_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"\[(\w+)]").unwrap())
 static NON_ALNUM_RE: Lazy<Regex> = Lazy::new(|| Regex::new("[^a-zA-Z0-9_]").unwrap());
 static MULTI_UNDERSCORE_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"_+").unwrap());
 static TRIM_UNDERSCORE_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"^_|_$").unwrap());
+static SANITIZE_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"(\W+)").unwrap());
 
 pub fn build_name(file: String, mut pack: String) -> String {
     if !pack.is_empty() {
@@ -21,6 +22,7 @@ pub fn build_name(file: String, mut pack: String) -> String {
     let file = NON_ALNUM_RE.replace(&file, "_");
     let file = MULTI_UNDERSCORE_RE.replace(&file, "_");
     let file = TRIM_UNDERSCORE_RE.replace(&file, "");
+    let file = SANITIZE_RE.replace_all(&file, "");
 
     let mut file = file.into_owned();
 

@@ -5,8 +5,9 @@ import { routesRebuild } from '../plugins/ctx/routesRebuild.js';
 import { build404 } from './utils/404/build404.js';
 import { getPublicEnvs } from '../env/getPublicEnvs.js';
 import { envValidationPlugin } from '../plugins/envValidation.js';
+import type { WebSocket as wsClient} from "ws";
 
-export async function buildCTX(userDir, wsClients) {
+export async function buildCTX(userDir: string, wsClients: Set<wsClient>) {
     const routesCTX = await esbuild.context({
         entryPoints: [join(userDir, '.phyre/routes/import-routes.jsx')],
         bundle: true,

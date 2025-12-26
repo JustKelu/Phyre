@@ -1,5 +1,6 @@
-export const generateMetaTagsHTML = (metaTags) => {
-    return metaTags?.map(tag => {
+// Runtime data from generated router code - typing not feasible
+export const generateMetaTagsHTML = (metaTags: any) => {
+    return metaTags?.map((tag: any) => {
         if (tag.title) {
             return `<title>${escapeHtml(tag.title)}</title>`
         }
@@ -21,9 +22,9 @@ export const generateMetaTagsHTML = (metaTags) => {
     }).join('\n'); 
 }
 
-function escapeHtml(text) {
+function escapeHtml(text: unknown) {
     return String(text)
-        .replace(/&/g, '&amp;')   // Prima, per non re-escape
+        .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')

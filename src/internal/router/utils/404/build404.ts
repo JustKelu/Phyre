@@ -3,7 +3,7 @@ import esbuild from 'esbuild';
 
 import { fileURLToPath } from "url";
 import { join, dirname  } from 'node:path';
-import { PhyreConfig } from '../../../../types/routes';
+import { PhyreConfig } from '../../../../types/config';
 import { getPhyreConfig } from '../../../utils/getPhyreConfig.js';
 
 const userDir = process.cwd();

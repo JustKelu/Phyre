@@ -15,12 +15,14 @@ import { scanner } from './internal/router/route-scanner.js';
 
 import { serverRebuild } from './internal/plugins/ctx/serverRebuild.js';
 import { startWebSocketServer } from './internal/server/startWebSocket.js';
+import type { WebSocket as wsClient } from "ws";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const userDir = process.cwd();
 
-let wsClients = new Set();
+let wsClients = new Set<wsClient>();
 let serverProcess = { state: null };
 
 async function dev() {

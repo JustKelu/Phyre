@@ -9,7 +9,7 @@ import esbuild from 'esbuild';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { postcssPlugin } from './internal/plugins/postcss.js';
-import { getPublicEnvs } from './internal/env/getPublicEnvs.js';
+import { getPublicEnvs } from './internal/env/getPublicEnvs.ts';
 import { routeScanner } from './internal/router/route-scanner.js';
 import { wrapRouter } from './internal/router/route-wrapper.js';
 import { ignoreCSSPlugin } from './internal/plugins/ignoreCss.js';

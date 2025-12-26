@@ -1,5 +1,5 @@
 
-import { PhyreConfig } from "../../types/routes.js";
+import { PhyreConfig } from "../../types/config.js";
 import { getPhyreConfig } from "../utils/getPhyreConfig.js";
 import { routeScanner } from "../../../rust/index.js";
 

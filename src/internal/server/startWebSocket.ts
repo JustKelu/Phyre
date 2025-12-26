@@ -1,9 +1,11 @@
+import type { Server as http } from "node:http";
+import type { Server as ws, WebSocket as wsClient } from "ws";
 import { createServer } from 'node:http';
 import { WebSocketServer } from 'ws';
 
-let httpServer = null;
+let httpServer: http | undefined;
 
-export const startWebSocketServer = (wsClients) => {
+export const startWebSocketServer = (wsClients: Set<wsClient>) => {
     if (httpServer) {
         console.log('Client already connected');
         return;
@@ -11,9 +13,9 @@ export const startWebSocketServer = (wsClients) => {
     
     httpServer = createServer();
     
-    const wss = new WebSocketServer({ server: httpServer });
+    const wss: ws = new WebSocketServer({ server: httpServer });
     
-    wss.on('connection', (client) => {
+    wss.on('connection', (client: wsClient) => {
         console.log('Client connected');
         wsClients.add(client);
         

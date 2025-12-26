@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module';
 import { resolve } from 'node:path';
-import { PhyreConfig } from '../../types/routes';
+import { PhyreConfig } from '../../types/config';
 import { existsSync } from 'node:fs';
 
 const userDir = process.cwd();

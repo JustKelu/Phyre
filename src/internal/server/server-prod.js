@@ -3,9 +3,9 @@ config();
 import express from 'express';
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
-import { loadRoutes } from './api-router.js'
-import { globalsMiddleware } from './globals-middleware.js';
-import { generateMetaTagsHTML } from './generateMetaTagsHTML.js';
+import { loadRoutes } from './api/loadRoutes.js'
+import { globalsMiddleware } from './utils/globals-middleware.ts';
+import { generateMetaTagsHTML } from './utils/generateMetaTagsHTML.ts';
 
 import { join, resolve } from 'node:path';
 import { createRequire } from 'node:module';
