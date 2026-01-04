@@ -1,4 +1,3 @@
-// prod.js
 import { config } from 'dotenv';
 config();
 
@@ -20,18 +19,16 @@ const __dirname = dirname(__filename);
 const userDir = process.cwd(); 
 
 async function build() {
-    console.log('🗃️  Building for production...\n');
-
     const distDir = join(userDir, 'dist');
     if (fsSync.existsSync(distDir)) {
         fsSync.rmSync(distDir, { recursive: true });
     }
     fsSync.mkdirSync(distDir, { recursive: true });
 
-    console.log('📂 Scanning routes...');
+    console.log(' Scanning routes...');
     routeScanner();  
 
-    console.log('⚙️  Compiling routes...');
+    console.log(' Compiling routes...');
     await esbuild.build({
         entryPoints: [join(userDir, '.phyre/routes/import-routes.jsx')],
         bundle: true,
@@ -49,7 +46,7 @@ async function build() {
         plugins: [ignoreCSSPlugin]
     });
 
-    console.log('⚙️  Compiling 404 page...');
+    console.log(' Compiling 404 page...');
     await build404(); 
     
     const _404Source = join(userDir, '.phyre/routes/404/_404Compiled.js');
@@ -63,9 +60,9 @@ async function build() {
     const wrapperDest = join(userDir, 'dist/routes/index.js');
     fsSync.copyFileSync(wrapperSource, wrapperDest);
     
-    console.log('✅ Routes compiled');
+    console.log(' Routes compiled');
 
-    console.log('🎨 Building client...');
+    console.log(' Building client...');
 
     await esbuild.build({
         entryPoints: [join(userDir, 'app/index.jsx')],
@@ -87,37 +84,34 @@ async function build() {
         },
         
         plugins: [
-            postcssPlugin(userDir, true) // ✅ Passa true per production
+            postcssPlugin(userDir, true)
         ]
     });
 
-    console.log('✅ Client built');
+    console.log(' Client built');
 
-// 🔍 DEBUG FILES
-console.log('\n' + '='.repeat(50));
-console.log('📁 CHECKING BUILD OUTPUT:');
-console.log('='.repeat(50));
+    console.log('\n' + '='.repeat(50));
+    console.log('CHECKING BUILD OUTPUT:');
+    console.log('='.repeat(50));
 
-const distPublic = join(userDir, 'dist/public');
-console.log(`\nDirectory: ${distPublic}`);
-console.log(`Exists: ${fsSync.existsSync(distPublic)}\n`);
+    const distPublic = join(userDir, 'dist/public');
+    console.log(`\nDirectory: ${distPublic}`);
+    console.log(`Exists: ${fsSync.existsSync(distPublic)}\n`);
 
-if (fsSync.existsSync(distPublic)) {
-    const files = fsSync.readdirSync(distPublic);
-    console.log(`Files found: ${files.length}\n`);
-    files.forEach(file => {
-        const fullPath = join(distPublic, file);
-        const stats = fsSync.statSync(fullPath);
-        const size = (stats.size / 1024).toFixed(2);
-        console.log(`  ${stats.isDirectory() ? '📁' : '📄'} ${file.padEnd(30)} ${size.padStart(10)} KB`);
-    });
-} else {
-    console.log('❌ dist/public directory does NOT exist!');
-}
+    if (fsSync.existsSync(distPublic)) {
+        const files = fsSync.readdirSync(distPublic);
+        files.forEach(file => {
+            const fullPath = join(distPublic, file);
+            const stats = fsSync.statSync(fullPath);
+            const size = (stats.size / 1024).toFixed(2);
+        });
+    } else {
+        console.log('dist/public directory does NOT exist!');
+    }
 
-console.log('\n' + '='.repeat(50) + '\n');
+    console.log('\n' + '='.repeat(50) + '\n');
 
-    console.log('🖥️  Building server...');
+    console.log(' Building server...');
 
     await esbuild.build({
         entryPoints: [join(__dirname, 'internal/server/server-prod.js')],
@@ -139,9 +133,9 @@ console.log('\n' + '='.repeat(50) + '\n');
         outfile: join(userDir, 'dist/server.js')
     });
 
-    console.log('✅ Server built');
+    console.log(' Server built');
 
-    console.log('📦 Copying static assets...');
+    console.log(' Copying static assets...');
 
     if (fsSync.existsSync(join(userDir, 'index.html'))) {
         fsSync.copyFileSync(
@@ -160,9 +154,7 @@ console.log('\n' + '='.repeat(50) + '\n');
     
     console.log('Remember to declare your env variables on your deploy environment')
 
-    console.log('✅ Assets copied');
-
-    console.log('\n📊 Build complete!\n');
+    console.log('\n Build complete!\n');
     
     const getSize = (path) => {
         if (!fsSync.existsSync(path)) return '0 KB';
@@ -175,13 +167,13 @@ console.log('\n' + '='.repeat(50) + '\n');
     console.log(`  dist/public/index.css - ${getSize(join(userDir, 'dist/public/index.css'))}`);
     console.log(`  dist/server.js        - ${getSize(join(userDir, 'dist/server.js'))}`);
     
-    console.log('\n🚀 To run production server:');
+    console.log('\n To run production server:');
     console.log('   cd dist && node server.js\n');
 }
 
 build()
     .then(() => process.exit(0))
     .catch(err => {
-        console.error('❌ Build failed:', err);
+        console.error(' Build failed:', err);
         process.exit(1);
     });
