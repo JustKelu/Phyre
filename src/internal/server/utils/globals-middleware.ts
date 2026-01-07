@@ -2,8 +2,8 @@ import fs from 'fs'
 import { join, resolve } from 'node:path';
 import { createRequire } from 'node:module';
 import type { PhyreConfig } from "../../../types/config";
-import {PhyrePackage} from "../../../../rust";
-import {RequestHandler} from "express";
+import { PhyrePackage } from "../../../../rust";
+import { RequestHandler } from "express";
 
 const userDir = process.cwd();
 
