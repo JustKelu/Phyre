@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { generateMetaTagsHTML } from '../../../src/internal/server/utils/generateMetaTagsHTML';
+import { generateMetaTagsHTML } from '../../../src/internal/server/utils/generateMetaTagsHTML.ts';
 
 describe('generateMetaTagsHTML', () => {
     it('Should generate a meta tag', () => {
