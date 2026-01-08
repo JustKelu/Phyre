@@ -15,16 +15,13 @@ vi.mock('node:module', () => ({
     createRequire: vi.fn(() => mockRequire)
 }));
 
-const consoleLogSpy = vi.spyOn(console, 'log');
-const consoleErrorSpy = vi.spyOn(console, 'error');
-
 describe('globals-middleware', () => {
     beforeEach(() => {
         vi.clearAllMocks();
         vi.resetModules();
 
-        consoleLogSpy.mockImplementation(() => {});
-        consoleErrorSpy.mockImplementation(() => {});
+        vi.spyOn(console, 'log').mockImplementation(() => {});
+        vi.spyOn(console, 'error').mockImplementation(() => {});
 
         mockRequire.mockReturnValue(undefined);
     });
