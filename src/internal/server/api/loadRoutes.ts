@@ -47,8 +47,9 @@ export async function loadRoutes(apiDir: string = '') {
                         console.error(`Invalid handler for ${route.method} ${fullPath}`);
                         return;
                     }
-
-                    router[httpMethod](fullPath, ...middlewares, handler);
+                    
+                    // @ts-ignore
+                    router[httpMethod.toLowerCase()](fullPath, ...middlewares, handler);
 
                     const middlewareInfo = middlewares.length > 0 ? ` [${middlewares.length} middleware]` : '';
                     console.log(`✓ Registered ${route.method.padEnd(6)} /api${fullPath}${middlewareInfo}`);
