@@ -30,7 +30,7 @@ describe('globals-middleware', () => {
     });
 
     it('Should return undefined if no global middleware file exists', async () => {
-        const { globalsMiddleware } = await import('../../../src/internal/server/utils/globals-middleware');
+        const { globalsMiddleware } = await import('../../../../src/internal/server/utils/globals-middleware.ts');
 
         vi.mocked(fs.existsSync).mockReturnValue(false);
 
@@ -39,7 +39,7 @@ describe('globals-middleware', () => {
     });
 
     it('Should return middlewares when .js file exists', async () => {
-        const { globalsMiddleware } = await import('../../../src/internal/server/utils/globals-middleware');
+        const { globalsMiddleware } = await import('../../../../src/internal/server/utils/globals-middleware.ts');
 
         vi.mocked(fs.existsSync).mockImplementation((path) => {
             return path.toString().endsWith('.js');
@@ -55,7 +55,7 @@ describe('globals-middleware', () => {
     });
 
     it('Should return middlewares when .ts file exists', async () => {
-        const { globalsMiddleware } = await import('../../../src/internal/server/utils/globals-middleware');
+        const { globalsMiddleware } = await import('../../../../src/internal/server/utils/globals-middleware.ts');
 
         vi.mocked(fs.existsSync).mockImplementation((path) => {
             return path.toString().endsWith('.ts');
@@ -81,7 +81,7 @@ describe('globals-middleware', () => {
             }
         });
 
-        const { globalsMiddleware } = await import('../../../src/internal/server/utils/globals-middleware');
+        const { globalsMiddleware } = await import('../../../../src/internal/server/utils/globals-middleware.ts');
 
         const expectedConfigPath = join(userDir, 'phyre.config.js');
         expect(mockRequire).toHaveBeenCalledWith(expectedConfigPath);

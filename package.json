@@ -63,6 +63,7 @@
     "@types/express": "^5.0.6",
     "@types/node": "^24.10.2",
     "@types/ws": "^8.18.1",
+    "memfs": "^4.51.1",
     "typescript": "^5.9.3",
     "vitest": "^4.0.16"
   }

@@ -4,7 +4,8 @@ export function convertFilePathToRoute(basePath: string, fileName: string): stri
 
     const converted: string = name.replace(/\[(\w+)]/g, ':$1');
 
-    let fullPath: string = `${basePath}/${converted}`;
+    let fullPath: string = converted ? `${basePath}/${converted}` : basePath;
+
     fullPath = fullPath.replace(/\/+/g, '/');
 
     return fullPath || '/';
