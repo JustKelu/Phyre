@@ -8,5 +8,7 @@ export function convertFilePathToRoute(basePath: string, fileName: string): stri
 
     fullPath = fullPath.replace(/\/+/g, '/');
 
+    if (!fullPath.startsWith('/')) fullPath = '/' + fullPath;
+
     return fullPath || '/';
 }
