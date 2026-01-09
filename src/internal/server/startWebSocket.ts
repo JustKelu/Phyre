@@ -33,3 +33,10 @@ export const startWebSocketServer = (wsClients: Set<wsClient>) => {
     const WSS_PORT = process.env.WSS_PORT || 3001;     
     httpServer.listen(WSS_PORT, () => console.log(`WSS Online on ws://localhost:${WSS_PORT}`));
 }
+
+export function stopWebSocketServer() {
+    if (httpServer) {
+        httpServer.close();
+        httpServer = undefined;
+    }
+}
