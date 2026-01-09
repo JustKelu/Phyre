@@ -14,7 +14,7 @@ let isReloading = false;
 ws.on('message', async (message) => {
     const data = JSON.parse(message.toString());
     if (data?.type === 'reloadRoutes') {
-        if (isReloading) return; // Previene reload multipli
+        if (isReloading) return;
         
         isReloading = true;
         try {
@@ -98,7 +98,6 @@ router.get('/{*splat}', async (req, res, next) => {
 function extractMetaTags(context) {
     const metaMap = new Map();
     
-    // Itera matches (parent â†’ child order)
     for (const match of context.matches) {
         if (match.route.meta) {
             const routeId = match.route.id;
@@ -116,7 +115,7 @@ function extractMetaTags(context) {
                 if (routeMeta && Array.isArray(routeMeta)) {
                     for (const tag of routeMeta) {
                         const key = getMetaKey(tag);
-                        metaMap.set(key, tag);  // â† Last write wins
+                        metaMap.set(key, tag);
                     }
                 }
             } catch (err) {
